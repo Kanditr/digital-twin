@@ -5,7 +5,7 @@ const privateKey = fs.readFileSync(".secret").toString()
 const projectId = "d9ccf5df419749a3a28681741a811e89"
 
 module.exports = {
-  network: {
+  networks: {
     hardhat: {
       chainId: 1337
     },
