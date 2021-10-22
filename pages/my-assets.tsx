@@ -24,7 +24,7 @@ export default function MyAssets() {
     const marketContract = new ethers.Contract(
       nftmarketaddress,
       Market.abi,
-      provider
+      signer
     );
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const data = await marketContract.fetchMyNFTs();
@@ -40,8 +40,6 @@ export default function MyAssets() {
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
-          name: meta.data.name,
-          description: meta.data.description,
         };
         return item;
       })
@@ -55,16 +53,18 @@ export default function MyAssets() {
 
   return (
     <div className="flex justify-center">
-      <div className="px-4" style={{ maxWidth: "1600px" }}>
+      <div className="p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-          {nfts.map((nft, i) => {
+          {nfts.map((nft, i) => (
             <div key={i} className="border shadow rounded-xl overflow-hidden">
-              <img src={nft.image} />
-              <div className="text-2xl font-bold text-white">
-                Price - {nft.price} Matic
+              <img src={nft.image} className="rounded" />
+              <div className="p-4 bg-black">
+                <p className="text-2xl font-bold text-white">
+                  Price - {nft.price} Matic
+                </p>
               </div>
-            </div>;
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>
