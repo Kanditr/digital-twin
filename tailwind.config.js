@@ -2,10 +2,25 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    
+    extend: {
+      flex: {
+        '25': '0 0 calc(25% - 32px)', 
+        '33': '0 0 33.33%' ,
+        '50': '0 0 50%' 
+      },
+      maxWidth: {
+        "1/2": '50%',
+        '1/3': 'calc(33.333% - 32px)',
+        '1/4': 'calc(25% - 32px)',
+        'screen-xl': '1280px'
+      },
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      scale: ['group-hover']
+    },
   },
   plugins: [],
 }
