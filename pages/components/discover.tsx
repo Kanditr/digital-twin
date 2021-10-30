@@ -51,7 +51,9 @@ const Discover = () => {
                 className="rounded-xl h-12"
               >
                 {dateOptions.map((x) => (
-                  <MenuItem value={x}>{x}</MenuItem>
+                  <MenuItem value={x} key={x}>
+                    {x}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
