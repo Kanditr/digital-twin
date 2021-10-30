@@ -27,7 +27,7 @@ export default function Hero() {
     // section
     <div className="pt-8 md:pt-16 xl:pt-32">
       {/* container */}
-      <div className="w-full max-w-screen-xl my-0 mx-auto py-0 md:px-8 lg:px-10 xl:px-20">
+      <div className="w-full max-w-screen-xl my-0 mx-auto py-0 px-8 lg:px-10 xl:px-20">
         {/* head */}
         <div className="max-w-screen-sm mt-0 mx-auto mb-20 lg:mb-28 text-center">
           <div className="mb-2 text-sm md:text-base">

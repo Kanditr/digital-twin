@@ -12,9 +12,9 @@ const Card = ({ className, item }: any) => {
   return (
     <div className={cn("flex flex-col group", className)}>
       {/* preview */}
-      <div className="relative rounded-2xl overflow-hidden w-full ">
+      <div className="relative rounded-2xl overflow-hidden w-96 ">
         {/* img */}
-        <div className=" transform transition duration-700 group-hover:scale-110">
+        <div className="w-full transform transition duration-700 group-hover:scale-110">
           <img srcSet={`${item.image2x} 2x`} src={item.image} alt="Card" />
         </div>
         {/* control */}
@@ -23,13 +23,14 @@ const Card = ({ className, item }: any) => {
           <div></div>
           {/* favorite */}
           <IconButton
-            style={{ color: "#EF466F" }}
+            style={{ backgroundColor: "white", color: "#EF466F" }}
+            className="w-8 h-8 absolute top-2 right-2"
             onClick={() => setVisible(!visible)}
           >
             {visible === true ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
           {/* place a bid */}
-          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600">
+          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600 absolute left-20 bottom-2 h-10">
             Purchase
           </Button>
         </div>
