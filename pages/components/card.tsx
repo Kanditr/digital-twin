@@ -12,10 +12,20 @@ const Card = ({ className, item }: any) => {
   return (
     <div className={cn("flex flex-col group", className)}>
       {/* preview */}
-      <div className="relative rounded-2xl overflow-hidden w-96 ">
+      <div className="relative rounded-2xl overflow-hidden w-full ">
         {/* img */}
-        <div className="w-full transform transition duration-700 group-hover:scale-110">
+        {/* <div className="w-full transform transition duration-700 group-hover:scale-110">
           <img srcSet={`${item.image2x} 2x`} src={item.image} alt="Card" />
+        </div> */}
+        <div className="flex-grow max-w-full my-0 mx-auto transform transition duration-700 group-hover:scale-110">
+          <div className="relative">
+            <img
+              srcSet={`${item.image2x} 2x`}
+              src={item.image}
+              alt="Card"
+              className="w-full"
+            />
+          </div>
         </div>
         {/* control */}
         <div className="transition-all opacity-0 hover:opacity-100 hover:visible duration-300 absolute top-0 left-0 w-full h-full rounded-2xl">
@@ -30,7 +40,7 @@ const Card = ({ className, item }: any) => {
             {visible === true ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
           {/* place a bid */}
-          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600 absolute left-20 bottom-2 h-10">
+          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600 absolute left-1/2 bottom-2 h-10">
             Purchase
           </Button>
         </div>
