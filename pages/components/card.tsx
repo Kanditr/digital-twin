@@ -40,7 +40,7 @@ const Card = ({ className, item }: any) => {
             {visible === true ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
           {/* place a bid */}
-          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600 absolute left-1/2 bottom-2 h-10">
+          <Button className="bg-blue-500 text-white normal-case rounded-3xl px-5 hover:bg-blue-600 absolute left-1/2-72 bottom-2 h-10 w-36">
             Purchase
           </Button>
         </div>
