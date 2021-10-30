@@ -1,32 +1,11 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Link from "next/link";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
       <nav className="border-b p-6">
-        <p className="text-4xl font-bold">Digital Twin Project</p>
-        <div className="flex mt-4">
-          <Link href="/">
-            <a className="mr-6 text-pink-500">First</a>
-          </Link>
-          {/* <Link href="/create-item">
-            <a className="mr-6 text-pink-500">Sell Digital Asset</a>
-          </Link> */}
-          {/* <Link href="/my-assets">
-            <a className="mr-6 text-pink-500">My Digital Assets</a>
-          </Link> */}
-          {/* <Link href="/creator-dashboard">
-            <a className="mr-6 text-pink-500">Creator Dashboard</a>
-          </Link> */}
-          <Link href="/component">
-            <a className="mr-6 text-pink-500">Component</a>
-          </Link>
-          <Link href="/home">
-            <a className="mr-6 text-pink-500">Home</a>
-          </Link>
-        </div>
+        <p className="text-4xl font-bold">Digital twin project</p>
       </nav>
       <Component {...pageProps} />
     </div>
