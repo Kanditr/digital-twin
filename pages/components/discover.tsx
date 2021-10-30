@@ -35,14 +35,14 @@ const Discover = () => {
     // section
     <div className="pt-8 md:pt-16 xl:pt-32">
       {/* container */}
-      <div className="w-full max-w-screen-xl my-0 mx-auto py-0 md:px-8 lg:px-10 xl:px-20">
+      <div className="w-full max-w-screen-xl my-0 mx-auto py-0 px-8 lg:px-10 xl:px-20">
         {/* title */}
         <h3 className="text-4xl leading-tight mb-8 md:mb-16">Discover</h3>
         {/* top */}
-        <div className="relative block md:flex justify-between mb-3 md:mb-8">
+        <div className="relative block md:flex justify-between md:mb-8 mb-3 md:h-12">
           {/* dropdown */}
           <div>
-            <FormControl className="w-full lg:w-60 xl:w-44">
+            <FormControl className="w-full mb-3 md:w-44 xl:w-60">
               <Select
                 value={date}
                 onChange={handleChange}
@@ -74,9 +74,9 @@ const Discover = () => {
             ))}
           </div>
           {/* filter button */}
-          <div className="relative flex justify-center items-center flex-shrink-0 ">
+          <div className="relative flex justify-center items-center flex-shrink-0">
             <Button
-              className="normal-case bg-blue-500 rounded-3xl text-white w-28 h-12  hover:bg-blue-500"
+              className="w-full normal-case bg-blue-500 rounded-3xl text-white md:w-28  hover:bg-blue-500 h-12"
               onClick={() => setVisible(!visible)}
               endIcon={
                 visible === false ? <FilterAltOutlinedIcon /> : <CloseIcon />
@@ -91,11 +91,10 @@ const Discover = () => {
         {/* list */}
         <div className="-mx-0 md:-mx-0">
           {/* slider */}
-          <div className="block m-0 md:flex flex-wrap -mt-8 -mx-4 mb-0 overflow-visible pb-16">
+          <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16">
             {bids.map((x, index) => (
               <Card
-                className="mt-8 mx-4 flex-25 max-w-1/4"
-                // className="max-w-full m-0 md:mt-8 md:mx-4 md:flex-50 md:max-w-1/2 lg:flex-33 lg:max-w-1/3 xl:flex-25 xl:max-w-1/4"
+                className="mt-8 mx-4 max-w-full md:flex-33 md:max-w-1/3 lg:flex-25 lg:max-w-1/4"
                 item={x}
                 key={index}
               />
