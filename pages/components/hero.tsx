@@ -36,7 +36,7 @@ export default function Hero() {
           <h2 className="mb-6 text-2xl md:text-4xl">
             The new creative economy.
           </h2>
-          <Link href="/">
+          <Link href="/" passHref>
             <Button
               variant="outlined"
               className="rounded-full font-sans normal-case"
@@ -50,7 +50,7 @@ export default function Hero() {
         <div className="relative my-0 mx-0">
           {items.map((x, index) => (
             // row
-            <div className="block items-start lg:flex">
+            <div className="block items-start lg:flex" key={index}>
               {/* image */}
               <div className="flex-grow max-w-3xl my-0 mx-auto">
                 <div className="relative" key={index}>
@@ -116,7 +116,7 @@ export default function Hero() {
                 </div>
                 {/* btns */}
                 <div>
-                  <Link href="/">
+                  <Link href="/" passHref>
                     <Button
                       variant="contained"
                       className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12 bg-blue-500"
@@ -125,7 +125,7 @@ export default function Hero() {
                       Place a bid
                     </Button>
                   </Link>
-                  <Link href="/">
+                  <Link href="/" passHref>
                     <Button
                       variant="outlined"
                       className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12"
