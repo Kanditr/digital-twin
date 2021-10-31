@@ -115,24 +115,16 @@ export default function Hero() {
                   </div>
                 </div>
                 {/* btns */}
-                <div>
+                <div className="flex flex-col">
                   <Link href="/" passHref>
-                    <Button
-                      variant="contained"
-                      className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12 bg-blue-500"
-                      size="large"
-                    >
+                    <button className="mb-2 w-full rounded-full h-12 bg-blue-500 hover:bg-blue-600 transition-all text-white">
                       Place a bid
-                    </Button>
+                    </button>
                   </Link>
                   <Link href="/" passHref>
-                    <Button
-                      variant="outlined"
-                      className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12"
-                      size="large"
-                    >
+                    <button className="w-full rounded-full h-12 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all">
                       View item
-                    </Button>
+                    </button>
                   </Link>
                 </div>
               </div>
