@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Card from "./card";
 
 //data
-import { bids } from "../components/mocks/bids";
+import { bids } from "./mocks/bids";
 
 const navLinks = ["All items", "Art", "Game", "Photography", "Music"];
 const dateOptions = ["Recently added", "Long added"];
@@ -51,7 +51,9 @@ const Discover = () => {
                 className="rounded-xl h-12"
               >
                 {dateOptions.map((x) => (
-                  <MenuItem value={x}>{x}</MenuItem>
+                  <MenuItem value={x} key={x}>
+                    {x}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>
