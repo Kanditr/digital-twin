@@ -37,13 +37,10 @@ export default function Hero() {
             The new creative economy.
           </h2>
           <Link href="/" passHref>
-            <Button
-              variant="outlined"
-              className="rounded-full font-sans normal-case"
-              // style={{ color: "#111111" }}
-            >
+            <button
+              className="rounded-full px-6 h-12 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all">
               Start your search
-            </Button>
+            </button>
           </Link>
         </div>
         {/* wrapper */}
