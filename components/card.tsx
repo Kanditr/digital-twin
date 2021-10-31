@@ -14,15 +14,15 @@ const Card = ({ className, item }: any) => {
   return (
     <div className={cn("flex flex-col group", className)}>
       {/* preview */}
-      <div className="relative overflow-hidden w-full ">
+      <div className="relative overflow-hidden rounded-2xl">
         {/* img */}
-        <div className="flex-grow max-w-full my-0 mx-auto transform transition duration-700 group-hover:scale-110">
-          <div className="relative">
+        <div className="flex-grow max-w-full my-0 mx-auto ">
+          <div className="relative ">
             <img
               srcSet={`${item.image2x} 2x`}
               src={item.image}
               alt="Card"
-              className="w-full rounded-2xl"
+              className="w-full rounded-2xl transform transition duration-700 group-hover:scale-110"
             />
           </div>
         </div>
