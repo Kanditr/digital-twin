@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Dropdown from '../components/dropdown';
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -6,6 +7,7 @@ import Button from "@mui/material/Button";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import Card from "./card";
+import Example from './dropdowntailwind'
 
 //data
 import { bids } from "./mocks/bids";
@@ -41,8 +43,14 @@ const Discover = () => {
         {/* top */}
         <div className="relative block md:flex justify-between md:mb-8 mb-3 md:h-12">
           {/* dropdown */}
-          <div>
-            <FormControl className="w-full mb-3 md:w-44 xl:w-60">
+          <div className=" w-full mb-3 md:w-44 lg:w-64">
+            <Dropdown value={date}
+              setValue={setDate}
+              options={dateOptions}>
+              
+            </Dropdown>
+            <Example/>
+            {/* <FormControl className="w-full mb-3 md:w-44 xl:w-60">
               <Select
                 value={date}
                 onChange={handleChange}
@@ -56,7 +64,7 @@ const Discover = () => {
                   </MenuItem>
                 ))}
               </Select>
-            </FormControl>
+            </FormControl> */}
           </div>
           {/* nav */}
           <div className="absolute hidden lg:flex top-2 left-1/3 mt-0.5 justify-center">
