@@ -87,7 +87,7 @@ const Discover = () => {
           <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16">
             {bids.map((x, index) => (
               <Card
-                className="mt-8 mx-4 max-w-full md:flex-33 md:max-w-1/3 lg:flex-25 lg:max-w-1/4 rounded-2xl"
+                className="mt-8 mx-4 max-w-full md:flex-33 md:max-w-1/3 lg:flex-25 lg:max-w-1/4"
                 item={x}
                 key={index}
               />
