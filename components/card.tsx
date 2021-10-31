@@ -12,35 +12,25 @@ const Card = ({ className, item }: any) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className={cn("flex flex-col rounded-2xl group", className)}>
+    <div className={cn("flex flex-col group", className)}>
       {/* preview */}
-      <div className="relative rounded-2xl overflow-hidden w-full ">
+      <div className="relative overflow-hidden w-full ">
         {/* img */}
-        {/* <div className="w-full transform transition duration-700 group-hover:scale-110">
-          <img srcSet={`${item.image2x} 2x`} src={item.image} alt="Card" />
-        </div> */}
         <div className="flex-grow max-w-full my-0 mx-auto transform transition duration-700 group-hover:scale-110">
           <div className="relative">
             <img
               srcSet={`${item.image2x} 2x`}
               src={item.image}
               alt="Card"
-              className="w-full"
+              className="w-full rounded-2xl"
             />
           </div>
         </div>
         {/* control */}
-        <div className="transition-all opacity-0 hover:opacity-100 hover:visible duration-300 absolute top-0 left-0 w-full h-full rounded-2xl">
+        <div className="transition-all opacity-0 hover:opacity-100 hover:visible duration-300 absolute top-0 left-0 w-full h-full">
           {/* category & status */}
           <div></div>
           {/* favorite */}
-          {/* <IconButton
-            style={{ backgroundColor: "white", color: "#EF466F" }}
-            className="w-8 h-8 absolute top-2 right-2"
-            onClick={() => setVisible(!visible)}
-          >
-            {visible === true ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-          </IconButton> */}
           <button
             className="absolute top-2 right-2 w-8 h-8 px-1.5 rounded-full bg-white items-center"
             onClick={() => setVisible(!visible)}

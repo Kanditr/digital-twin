@@ -7,7 +7,6 @@ import ListboxSorting from "./listbox-sorting";
 
 //data
 import { bids } from "./mocks/bids";
-// import { Icon } from "@mui/material";
 
 const navLinks = ["All items", "Art", "Game", "Photography", "Music"];
 const dateOptions = ["Recently added", "Long added"];
@@ -85,7 +84,7 @@ const Discover = () => {
         {/* list */}
         <div className="-mx-0 md:-mx-0">
           {/* slider */}
-          <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16 rounded-2xl">
+          <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16">
             {bids.map((x, index) => (
               <Card
                 className="mt-8 mx-4 max-w-full md:flex-33 md:max-w-1/3 lg:flex-25 lg:max-w-1/4"
