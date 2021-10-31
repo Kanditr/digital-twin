@@ -25,7 +25,7 @@ const items = [
 export default function Hero() {
   return (
     // section
-    <div className="pt-8 md:pt-16 xl:pt-32">
+    <div className="py-16 md:py-28 lg:py-32">
       {/* container */}
       <div className="w-full max-w-screen-xl my-0 mx-auto py-0 px-8 lg:px-10 xl:px-20">
         {/* head */}
@@ -36,14 +36,10 @@ export default function Hero() {
           <h2 className="mb-6 text-2xl md:text-4xl">
             The new creative economy.
           </h2>
-          <Link href="/" passHref>
-            <Button
-              variant="outlined"
-              className="rounded-full font-sans normal-case"
-              // style={{ color: "#111111" }}
-            >
+          <Link href="/" passHref scroll={false}>
+            <button className="rounded-full px-6 h-12 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all">
               Start your search
-            </Button>
+            </button>
           </Link>
         </div>
         {/* wrapper */}
@@ -115,24 +111,16 @@ export default function Hero() {
                   </div>
                 </div>
                 {/* btns */}
-                <div>
-                  <Link href="/" passHref>
-                    <Button
-                      variant="contained"
-                      className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12 bg-blue-500"
-                      size="large"
-                    >
+                <div className="flex flex-col">
+                  <Link href="/" passHref scroll={false}>
+                    <button className="mb-3 w-full rounded-full h-12 bg-blue-500 hover:bg-blue-600 transition-all text-white">
                       Place a bid
-                    </Button>
+                    </button>
                   </Link>
-                  <Link href="/" passHref>
-                    <Button
-                      variant="outlined"
-                      className="flex flex-col mb-2 w-full rounded-full font-sans normal-case h-12"
-                      size="large"
-                    >
+                  <Link href="/" passHref scroll={false}>
+                    <button className="w-full rounded-full h-12 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all">
                       View item
-                    </Button>
+                    </button>
                   </Link>
                 </div>
               </div>
