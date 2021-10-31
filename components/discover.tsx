@@ -1,16 +1,13 @@
 import { useState } from "react";
-import Dropdown from '../components/dropdown';
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import Button from "@mui/material/Button";
-import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
-import CloseIcon from "@mui/icons-material/Close";
 import Card from "./card";
-import Example from './dropdowntailwind'
+import Listbox from "./listbox";
+import Link from "next/link";
+import Icon from "./Icon";
+import ListboxSorting from "./listbox-sorting";
 
 //data
 import { bids } from "./mocks/bids";
+// import { Icon } from "@mui/material";
 
 const navLinks = ["All items", "Art", "Game", "Photography", "Music"];
 const dateOptions = ["Recently added", "Long added"];
@@ -29,13 +26,9 @@ const Discover = () => {
   const [sorting, setSorting] = useState(sortingOptions[0]);
   const [visible, setVisible] = useState(false);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setDate(event.target.value);
-  };
-
   return (
     // section
-    <div className="pt-8 md:pt-16 xl:pt-32">
+    <div className="py-16 md:py-28 lg:py-32 bg-gray-100">
       {/* container */}
       <div className="w-full max-w-screen-xl my-0 mx-auto py-0 px-8 lg:px-10 xl:px-20">
         {/* title */}
@@ -43,57 +36,48 @@ const Discover = () => {
         {/* top */}
         <div className="relative block md:flex justify-between md:mb-8 mb-3 md:h-12">
           {/* dropdown */}
-          <div className=" w-full mb-3 md:w-44 lg:w-64">
-            <Dropdown value={date}
-              setValue={setDate}
-              options={dateOptions}>
-              
-            </Dropdown>
-            <Example/>
-            {/* <FormControl className="w-full mb-3 md:w-44 xl:w-60">
-              <Select
-                value={date}
-                onChange={handleChange}
-                displayEmpty
-                inputProps={{ "aria-label": "Without label" }}
-                className="rounded-xl h-12"
-              >
-                {dateOptions.map((x) => (
-                  <MenuItem value={x} key={x}>
-                    {x}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl> */}
+          <div className="w-full mb-3 md:w-64 lg:w-44">
+            <Listbox />
           </div>
           {/* nav */}
           <div className="absolute hidden lg:flex top-2 left-1/3 mt-0.5 justify-center">
             {navLinks.map((x, index) => (
-              <Button
+              <button
                 className={
                   index === activeIndex
-                    ? "bg-gray-800 text-gray-100 rounded-3xl hover:bg-gray-800 normal-case text-sm py-1 px-3 mx-1.5 "
-                    : " bg-none text-gray-400 rounded-3xl hover:text-gray-800 hover:bg-white normal-case text-sm py-1 px-3 mx-1.5"
+                    ? "bg-gray-800 text-gray-100 rounded-3xl hover:bg-gray-800 normal-case text-sm py-1 px-3 mx-1.5 transition-all"
+                    : " bg-none text-gray-400 rounded-3xl hover:text-gray-800 hover:bg-white normal-case text-sm py-1 px-3 mx-1.5 transition-all"
                 }
-                variant="text"
                 onClick={() => setActiveIndex(index)}
                 key={index}
               >
                 {x}
-              </Button>
+              </button>
             ))}
+          </div>
+          {/* nav dropdown */}
+          <div className="block lg:hidden mb-3 w-full md:w-64 lg:w-44">
+            <ListboxSorting />
           </div>
           {/* filter button */}
           <div className="relative flex justify-center items-center flex-shrink-0">
-            <Button
-              className="w-full normal-case bg-blue-500 rounded-3xl text-white md:w-28  hover:bg-blue-500 h-12"
+            <button
+              className="w-full rounded-full h-12 bg-blue-500 hover:bg-blue-600 transition-all text-white"
               onClick={() => setVisible(!visible)}
-              endIcon={
-                visible === false ? <FilterAltOutlinedIcon /> : <CloseIcon />
-              }
             >
-              Filter
-            </Button>
+              <div className="flex justify-center">
+                <span className="flex relative justify-center items-center pl-6">
+                  Filter
+                </span>
+                <span className="w-14 pr-2.5 justify-center items-center flex">
+                  {visible === false ? (
+                    <Icon name="filter" size="18" fill="white" />
+                  ) : (
+                    <Icon name="close" size="12" fill="white" />
+                  )}
+                </span>
+              </div>
+            </button>
           </div>
         </div>
         {/* filter */}
@@ -101,7 +85,7 @@ const Discover = () => {
         {/* list */}
         <div className="-mx-0 md:-mx-0">
           {/* slider */}
-          <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16">
+          <div className="block m-0 md:flex flex-wrap md:-mt-8 -mx-4 mb-0 overflow-visible pb-16 rounded-2xl">
             {bids.map((x, index) => (
               <Card
                 className="mt-8 mx-4 max-w-full md:flex-33 md:max-w-1/3 lg:flex-25 lg:max-w-1/4"

@@ -23,6 +23,8 @@ module.exports = {
     extend: {
       scale: ["group-hover"],
       borderWidth: ["hover", "focus"],
+      textDecoration: ['focus-visible'],
+      zIndex: ['hover', 'active'],
     },
   },
   plugins: [],
