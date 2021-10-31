@@ -14,9 +14,9 @@ const Card = ({ className, item }: any) => {
   return (
     <div className={cn("flex flex-col group", className)}>
       {/* preview */}
-      <div className="relative overflow-hidden rounded-2xl">
+      <div className="relative overflow-hidden rounded-2xl z-10">
         {/* img */}
-        <div className="flex-grow max-w-full my-0 mx-auto ">
+        <div className="flex-grow max-w-full my-0 mx-auto">
           <div className="relative ">
             <img
               srcSet={`${item.image2x} 2x`}
