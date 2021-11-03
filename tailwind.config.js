@@ -2,6 +2,9 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily:{
+      'sans': ['Poppins']
+    },
     extend: {
       flex: {
         25: "0 0 calc(25% - 32px)",

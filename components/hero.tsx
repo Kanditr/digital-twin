@@ -6,7 +6,7 @@ const items = [
     title: "Digital twin project®",
     creator: "Enrico Cole",
     currency: "1.00 ETH",
-    price: "$3,618.36",
+    price: "$4,218.36",
     avatar: "images/content/avatar-creator.jpg",
     image: "/images/content/video-preview.jpg",
     image2x: "/images/content/video-preview@2x.jpg",
@@ -33,7 +33,7 @@ export default function Hero() {
           <div className="mb-2 text-sm md:text-base">
             Create, explore, & collect digital art NFTs.
           </div>
-          <h2 className="mb-6 text-2xl md:text-4xl">
+          <h2 className="mb-6 text-2xl md:text-4xl font-semibold">
             The new creative economy.
           </h2>
           <Link href="/" passHref scroll={false}>
@@ -79,7 +79,7 @@ export default function Hero() {
                   <div className="text-5xl font-medium leading-tight">
                     {x.currency}
                   </div>
-                  <div className="mb-6 font-semibold text-2xl text-gray-500">
+                  <div className="mb-6 font-medium text-2xl text-gray-400">
                     {x.price}
                   </div>
                   <div className="text-base font-medium leading-5">
