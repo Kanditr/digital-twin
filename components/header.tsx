@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex items-center w-full max-w-screen-xl my-0 mx-auto py-0 px-8 lg:px-10 xl:px-20">
         {/* logo */}
         <Link href="/">
-          <div className="w-32 relative z-10 inline-block flex-shrink-0 mr-auto">
+          <div className="w-32 text-2xl leading-none relative z-10 inline-block flex-shrink-0 mr-auto cursor-pointer">
             Digital Twin
           </div>
         </Link>
