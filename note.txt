@@ -1,18 +1,20 @@
 
-############# run node ####################
+// run node
 npx hardhat node
 
-
-############# deploy contract #############
+// deploy contract
 npx hardhat run scripts/deploy.js --network localhost
 add deployed address to config.ts
 
-
-############# run #########################
+// run
 npm run dev
 
-
-############# Git create branch ###########
+// Git create branch
 git checkout -b <branch>
 git push -u origin <branch>
 
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
