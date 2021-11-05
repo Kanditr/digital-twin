@@ -4,10 +4,10 @@ const Header = () => {
   return (
     <div>
       <nav className="border-b p-6">
-        <p className="text-4xl">Digital Twin Project</p>
+        <p className="text-4xl">Digital Twin</p>
         <div className="flex mt-4">
           <Link href="/block-index">
-            <a className="mr-6 text-pink-500">First</a>
+            <a className="mr-6 text-pink-500">Home</a>
           </Link>
           <Link href="/create-item">
             <a className="mr-6 text-pink-500">Sell Digital Asset</a>
