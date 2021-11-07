@@ -23,3 +23,11 @@ git branch -d localBranchName
 
 // delete branch remotely
 git push origin --delete remoteBranchName
+
+// Production solution #1
+remove artifact from .gitignore
+factor private key and projectId to environment vaiable
+
+// Production solution #2
+playaround with dependencies and devDependencies
+factor private key and projectId to environment vaiable

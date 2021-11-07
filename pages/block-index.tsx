@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 import Blockheaer from "../components/blockheader";
-import Header from "../components/header";
 
-import { nftaddress, nftmarketaddress } from "../config";
+// console.log(process.env.NEXT_PUBLIC_NFT)
+
+// import { process.env.NFT, process.env.NFT_MARKET } from "../config";
+
+// const process.env.NEXT_PUBLIC_NFT = process.env.NEXT_PUBLIC_NFT
+// const process.env.NEXT_PUBLIC_NFT_MARKET = process.env.NEXT_PUBLIC_NFT_MARKET
 
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
@@ -20,12 +24,11 @@ const BlockIndex: NextPage = () => {
   }, []);
 
   async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider(
-      "https://rpc-mumbai.maticvigil.com"
-    );
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+    const provider = new ethers.providers.JsonRpcProvider(process.env.NEXT_PUBLIC_RPC_PROVIDER);
+    // const provider = new ethers.providers.JsonRpcProvider("https://matic-mumbai.chainstacklabs.com");
+    const tokenContract = new ethers.Contract(process.env.NEXT_PUBLIC_NFT as string, NFT.abi, provider);
     const marketContract = new ethers.Contract(
-      nftmarketaddress,
+      process.env.NEXT_PUBLIC_NFT_MARKET as string,
       Market.abi,
       provider
     );
@@ -58,12 +61,12 @@ const BlockIndex: NextPage = () => {
     const provider = new ethers.providers.Web3Provider(connection);
 
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
+    const contract = new ethers.Contract(process.env.NEXT_PUBLIC_NFT_MARKET as string, Market.abi, signer);
 
     const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
 
     const transaction = await contract.createMarketSale(
-      nftaddress,
+      process.env.NEXT_PUBLIC_NFT as string,
       nft.tokenId,
       {
         value: price,

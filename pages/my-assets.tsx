@@ -4,7 +4,10 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 import Blockheader from "../components/blockheader";
 
-import { nftaddress, nftmarketaddress } from "../config";
+// import { nftaddress, nftmarketaddress } from "../config";
+
+const nftaddress = process.env.NEXT_PUBLIC_NFT
+const nftmarketaddress = process.env.NEXT_PUBLIC_NFT_MARKET
 
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
@@ -23,11 +26,11 @@ export default function MyAssets() {
     const signer = provider.getSigner();
 
     const marketContract = new ethers.Contract(
-      nftmarketaddress,
+      nftmarketaddress as string,
       Market.abi,
       signer
     );
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+    const tokenContract = new ethers.Contract(nftaddress as string, NFT.abi, provider);
     const data = await marketContract.fetchMyNFTs();
 
     const items = await Promise.all(
