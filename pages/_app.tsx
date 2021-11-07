@@ -1,15 +1,18 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
+import { Web3ReactProvider } from "@web3-react/core";
+import Web3 from "web3";
 import type { AppProps } from "next/app";
+
+function getLibrary(provider: any) {
+  return new Web3(provider);
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div>
-      {/* <nav className="border-b p-6">
-        <p className="text-4xl font-semibold">Digital twin</p>
-      </nav> */}
+    <Web3ReactProvider getLibrary={getLibrary}>
       <Component {...pageProps} />
-    </div>
+    </Web3ReactProvider>
   );
 }
 export default MyApp;
