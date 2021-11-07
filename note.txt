@@ -2,9 +2,14 @@
 // run node
 npx hardhat node
 
-// deploy contract
+// deploy on local
 npx hardhat run scripts/deploy.js --network localhost
-add deployed address to config.ts
+
+// deploy on testnet
+npx hardhat run scripts/deploy.js --network mumbai
+
+nftMarket deployed to: 0xef2A2b03B29F484494897B025fa230dC4D879d5a
+nft deployed to 0xB677646d1795cE8bB30cc5FB1F394FbBa78A7270
 
 // run
 npm run dev
