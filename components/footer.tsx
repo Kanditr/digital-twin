@@ -61,9 +61,7 @@ const Footer = () => {
         <div className="text-center">
           Copyright © 2021 DIGITAL TWIN. All rights reserved
         </div>
-        <div className="hidden lg:flex">
-          We use cookies for better service. <a href="/#">Accept</a>
-        </div>
+        <div className="hidden lg:flex">We use cookies for better service.</div>
       </div>
     </footer>
   );
