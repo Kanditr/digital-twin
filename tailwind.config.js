@@ -20,6 +20,9 @@ module.exports = {
       inset: {
         "1/2-72": "calc(50% - 72px)",
       },
+      spacing: {
+        '84': '23rem',
+      }
     },
   },
   variants: {
@@ -28,7 +31,10 @@ module.exports = {
       borderWidth: ["hover", "focus"],
       textDecoration: ['focus-visible'],
       zIndex: ['hover', 'active'],
+      outline: ['focus']
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 };
