@@ -22,6 +22,12 @@ module.exports = {
       },
       spacing: {
         '84': '23rem',
+      },
+      width: {
+        '24/25': "calc(100% - 16px)"
+      },
+      height: {
+        '24/25': "calc(100% - 16px)"
       }
     },
   },
