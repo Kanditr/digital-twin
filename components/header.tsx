@@ -8,6 +8,9 @@ const Header = () => {
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
 
+  var firstAcc = account?.slice(0, 10);
+  var lastAcc = account?.slice(account.length - 4);
+
   async function connect() {
     try {
       await activate(injected);
@@ -46,16 +49,31 @@ const Header = () => {
         </Link>
         <button
           onClick={connect}
-          className="text-center justify-center rounded-full text-sm px-6 h-10 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all hidden md:block whitespace-nowrap mr-3"
+          className={
+            active
+              ? "text-center justify-center rounded-full text-sm px-1 pr-4 h-10 border-2 border-gray-200 hover:border-blue-500 transition-all hidden md:block whitespace-nowrap mr-3"
+              : "text-center justify-center rounded-full text-sm px-4 h-10 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all hidden md:block whitespace-nowrap mr-3"
+          }
         >
-          {active ? <span>{account}</span> : <span>Connect wallet</span>}
+          {active ? (
+            <span className="relative flex items-center">
+              <img
+                src="/images/content/avatar-10.png"
+                alt="Avatar"
+                className="rounded-full w-8 h-8 flex-shrink-0 mr-3"
+              />
+              {firstAcc}....{lastAcc}
+            </span>
+          ) : (
+            <span>Connect wallet</span>
+          )}
         </button>
         <button
           onClick={disconnect}
           className={
             active
-              ? "text-center justify-center rounded-full text-sm px-6 h-10 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all hidden md:block whitespace-nowrap"
-              : "text-center justify-center rounded-full text-sm px-6 h-10 border-2 border-gray-200 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all hidden whitespace-nowrap"
+              ? "text-center justify-center rounded-full text-sm px-4 h-10 border-2 border-gray-200 hover:bg-gray-400 hover:text-white hover:border-gray-400 transition-all hidden md:block whitespace-nowrap"
+              : "hidden"
           }
         >
           Disconnect
